@@ -38,7 +38,7 @@ export default function LoginForm() {
           <div className="form-divider" />
         </div>
 
-        <button className="btn-login login-google">
+        <button className="btn-login login-google" onClick={() => alert("Google login not implemented yet")} >
           <span className="google-icon">
             <GoogleIcon />
           </span>
@@ -73,7 +73,9 @@ export default function LoginForm() {
       </form>
       <div className="form__btns">
         <button>Forgot your password?</button>
-        <button className="sign-up">Don&apos;t have an account?</button>
+        <button className="sign-up" onClick={() => alert("Sign up not implemented yet")}>
+          Don&apos;t have an account?
+        </button>
       </div>
     </div>
   );

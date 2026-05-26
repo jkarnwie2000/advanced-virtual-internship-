@@ -17,9 +17,9 @@ export default function AuthModal({ onClose }: AuthModalProps) {
 
       {isLogin ? <LoginForm /> : <RegisterForm />}
 
-      {/* <button onClick={() => setIsLogin(!isLogin)}>
+      <button onClick={() => setIsLogin(!isLogin)}>
         {isLogin ? "Sign Up" : "Sign In"}
-      </button> */}
+      </button>
     </div>
   );
 }
