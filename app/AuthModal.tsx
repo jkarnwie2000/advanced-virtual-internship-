@@ -1,9 +1,8 @@
 "use client";
 
-import { useState } from "react"
+import { useState } from "react";
 import LoginForm from "./LoginForm";
 import RegisterForm from "./RegisterForm";
-
 
 type AuthModalProps = {
   onClose: () => void;
@@ -14,13 +13,13 @@ export default function AuthModal({ onClose }: AuthModalProps) {
 
   return (
     <div className="auth-container">
-      <button onClick={onClose}>X</button>
+      <button onClick={onClose} className="btn-close">X</button>
 
       {isLogin ? <LoginForm /> : <RegisterForm />}
 
-      <button onClick={() => setIsLogin(!isLogin)}>
+      {/* <button onClick={() => setIsLogin(!isLogin)}>
         {isLogin ? "Sign Up" : "Sign In"}
-      </button>
+      </button> */}
     </div>
   );
 }

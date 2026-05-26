@@ -79,7 +79,55 @@ button:disabled {
   justify-content: center;
 }
 
+/* MODAL */
 
+.auth-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 600px;
+  width: 500px;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.btn-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  font-size: 32px;
+}
+
+.dark-overlay {
+  min-height: 100vh;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  inset: 0;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  padding: 32px;
+}
+.login-form-container h3 {
+  text-align: center;
+}
 /* HOME */
 .section__title {
   font-size: 32px;
@@ -87,6 +135,109 @@ button:disabled {
   text-align: center;
   margin-bottom: 32px;
   font-weight: bold;
+}
+
+.form-divider {
+  height: 1px;
+  background-color: #e0e0e0;
+  flex: 1;
+}
+
+.form-divider--wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.form-divider--wrapper p {
+  margin: 16px;
+}
+
+.btn-login {
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.btn-login,
+.input-login {
+  width: 100%;
+  height: 45px;
+  border-radius: 10px;
+}
+
+.login-form-container .form__btns button {
+  text-align: center;
+  margin: 12px 0;
+  flex: 1;
+  width: 100%;
+  color: #116be9;
+  padding: 12px 0;
+}
+
+.form__btns {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-up {
+  background-color: #f1f6f4;
+  transition: all 300ms ease;
+  position: absolute;
+  padding: 16px 0 !important;
+  bottom: -15px;
+  left: 0;
+}
+
+.sign-up:hover {
+  background-color: #e1e9e8;
+}
+
+.guest-icon svg {
+  width: 30px;
+  height: 30px;
+}
+
+.btn-login span {
+  position: absolute;
+  transform: translateY(-50%);
+  left: 16px;
+  top: 50%;
+}
+
+.input-login {
+  border: 2px solid #bac8ce;
+  padding: 12px;
+  margin-bottom: 12px;
+}
+.google-icon svg {
+  width: 30;
+  height: 20;
+}
+
+.google-icon {
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+}
+.input-login::placeholder {
+  color: #757575;
+}
+.login-guest {
+  background-color: #3b569d;
+}
+
+.login-google {
+  background-color: #4285f4;
+}
+
+.btn-login--primary {
+  background-color: #2bd97c;
+  color: black;
 }
 
 /* NAVBAR */

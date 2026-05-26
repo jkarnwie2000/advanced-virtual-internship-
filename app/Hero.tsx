@@ -3,10 +3,13 @@
 import { useState } from "react";
 import AuthModal from "./AuthModal";
 
-export default function Hero() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
-return (
-<section id="landing">
+export default function Hero({
+  setIsModalOpen,
+}: {
+  setIsModalOpen: (isOpen: boolean) => void;
+}) {
+  return (
+    <section id="landing">
       <div className="container">
         <div className="row">
           <div className="landing__wrapper">
@@ -22,22 +25,24 @@ return (
                 <br className="remove--tablet" />
                 and even people who don’t like to read.
               </div>
-              <button className="btn home__cta--btn"
-              onClick={() => {                
-                setIsModalOpen(true)}}             
+              <button
+                className="btn home__cta--btn"
+                onClick={() => {
+                  setIsModalOpen(true);
+                }}
               >
                 Login
-            </button>
-            {isModalOpen && (
-                    <AuthModal onClose={() => setIsModalOpen(false)} />
-                  )}
+              </button>
             </div>
             <figure className="landing__image--mask">
-              <img src="https://summarist.vercel.app/_next/static/media/landing.e4787d01.png" alt="landing" />
+              <img
+                src="https://summarist.vercel.app/_next/static/media/landing.e4787d01.png"
+                alt="landing"
+              />
             </figure>
           </div>
         </div>
       </div>
-</section>
-);
+    </section>
+  );
 }

@@ -1,7 +1,20 @@
-import Hero from "./Hero";
+"use client";
 
+import Hero from "./Hero";
+import AuthModal from "./AuthModal";
+import { useState } from "react";
 
 export default function Home() {
-  return 
-  <Hero />;
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  return (
+    <>
+      <Hero setIsModalOpen={setIsModalOpen} />
+      {isModalOpen && (
+        <>
+          <AuthModal onClose={() => setIsModalOpen(false)} />
+          <div className="dark-overlay" />
+        </>
+      )}
+    </>
+  );
 }
