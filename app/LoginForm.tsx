@@ -8,18 +8,34 @@ import GoogleIcon from "./components/GoogleIcon";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [password, setPassword] = useState("");    
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const result = await signInWithEmailAndPassword(auth, email, password);
-      console.log("Logged in user:", result.user);
-      // Optional: redirect or update app state here
-    } catch (error: any) {
-      console.error("Login error:", error.message);
+  e.preventDefault();
+
+  try {    
+    
+    const cleanedEmail = email.trim();
+
+    if (!cleanedEmail) {
+      console.log("Email is empty");
+      return;
     }
-  };
+
+    const result = await signInWithEmailAndPassword(
+      auth,
+      cleanedEmail,
+      password
+    );
+
+    console.log("Login successful:", result.user);
+    window.location.href = "/";
+  } 
+  
+    catch (error) {
+    console.error("Login error:", error);
+  }
+};
 
   return (
     <div className="login-form-container">
