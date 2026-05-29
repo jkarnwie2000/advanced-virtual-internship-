@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { auth } from "../firebaseConfig";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import LoginIcon from "./components/LoginIcon";
@@ -9,6 +10,7 @@ import GoogleIcon from "./components/GoogleIcon";
 export default function LoginForm() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");    
+  const router = useRouter();
 
   const handleSubmit = async (e) => {
   e.preventDefault();
@@ -41,7 +43,11 @@ export default function LoginForm() {
     <div className="login-form-container">
       <h3>Login to Summarist</h3>
       <form onSubmit={handleSubmit} className="login-form">
-        <button className="btn-login login-guest">
+        <button
+          type="button"
+          className="btn-login login-guest"
+          onClick={() => router.push("/foryou")}
+        >
           <span className="guest-icon">
             <LoginIcon />
           </span>
