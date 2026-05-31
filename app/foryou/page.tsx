@@ -1,13 +1,16 @@
+
+
+
+
+
 export default function ForYouPage() {
   return (
+    <section>
     <div id="__next">
         <div className="wraper">
             <div className="search__background">
                 <div className="search__wrapper">
-                    <figure>
-                        <img src="https://summarist.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&w=1080&q=75" 
-                        alt="Summarist Logo" />
-                    </figure>
+                    
                     <div className="search__content">
                         <div className="search">
                             <div className="search__input--wrapper">
@@ -29,10 +32,8 @@ export default function ForYouPage() {
             </div>        
                 <div className="sidebar__overlay sidebar__overlay--hidden"></div>
             <div className="sidebar sidebar--closed">
-        <div className="sidebar__logo">
-            <img src="https://summarist.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&w=1080&q=75" />
-        </div>
-        <div className="sidebar__wrapper">
+        
+            <div className="sidebar__wrapper">
             <div className="sidebar__top">
                 <a className="sidebar__link--wrapper" href="/for-you">
                 <div className="sidebar__link--line active--tab"></div>
@@ -184,6 +185,7 @@ export default function ForYouPage() {
                 </div>
             </div>
        </div>
-    </div>        
+    </div>
+    </section>        
   );
 }
