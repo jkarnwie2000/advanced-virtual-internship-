@@ -1,6 +1,4 @@
 
-"use client";
-
 export default function ForYouPage() {
   return (
     <div id="__next">
