@@ -1,8 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import AuthModal from "./AuthModal";
-
 export default function Hero({
   setIsModalOpen,
 }: {

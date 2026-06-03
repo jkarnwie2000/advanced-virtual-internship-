@@ -5,11 +5,9 @@ import { AiFillAudio, AiFillFileText, AiFillBulb } from "react-icons/ai";
 import { BsStarFill, BsStarHalf } from "react-icons/bs";
 import { RiLeafLine } from "react-icons/ri";
 import { BiCrown } from "react-icons/bi";
-import "./globals.css";
 import Navbar from "./Navbar";
 import Statistics from "./Statistics";
 import Statistics2 from "./Statistics2";
-import Hero from "./Hero";
 import ReviewsButton from "./ReviewsButton";
 
 const geistSans = Geist({

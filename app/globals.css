@@ -766,6 +766,20 @@ element.style {
     background-color: #2bd97c;
 }
 
+/* SIDEBAR */
+
+.sidebar {
+    background-color: #f7faf9;
+    width: 200px;
+    min-width: 200px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: all .3s;
+}
+
 .sidebar__link--line {
     width: 5px;
     height: 100%;
@@ -821,6 +835,11 @@ element.style {
     color: #032b41;
     margin-bottom: 8px;
     cursor: pointer;
+}
+
+.sidebar__logo img {
+    width: 100%;
+    height: 40px;
 }
 
 
