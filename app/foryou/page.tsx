@@ -7,7 +7,7 @@ export default function ForYouPage() {
                 <div className="search__wrapper">
                     
                     <div className="search__content">
-                        <div className="search">
+                        <div className="search">                            
                             <div className="search__input--wrapper">
                                 <input className="search__input" placeholder="Search for books" type="text"/>
                                 <div className="search__icon">
