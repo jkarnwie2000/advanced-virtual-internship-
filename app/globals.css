@@ -745,6 +745,7 @@ div {
 .search__wrapper {
     position: relative;
     display: flex;
+    margin-left: auto;
     align-items: center;
     justify-content: space-between;
     padding: 0 32px;
@@ -800,6 +801,14 @@ div {
   height: 80px;
   border-bottom: 1px solid #e1e7ea;
   background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+
+.menu__button {
+  display: none;
 }
 
 .search__background {
