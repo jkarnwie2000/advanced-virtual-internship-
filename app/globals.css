@@ -702,22 +702,6 @@ button:disabled {
   }
 }
 
-@media (max-width: 734px) {
-  .sidebar__toggle--btn {
-    display: flex;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1000;
-  }
-
-  .sidebar__toggle--btn svg {
-    display: block;
-    width: 24px;
-    height: 24px;
-  }
-}
 
 /**For You Page**/
 
@@ -778,7 +762,6 @@ div {
   cursor: pointer;
   color: #032b41;
 }
-
 
 .search__content {
     display: flex;
@@ -1007,4 +990,56 @@ element.style {
     }
 
 
- 
+ @media (max-width: 734px) {
+  .search__background {
+    margin-left: 0;
+  }
+
+  .search__wrapper {
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 16px;
+  }
+
+  .search__content {
+    width: 100%;
+    max-width: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  .search {
+    flex: 1;
+  }
+
+  .sidebar__toggle--btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #032b41;
+    cursor: pointer;
+    position: relative;
+    z-index: 2000;
+  }
+
+  .sidebar__toggle--btn svg {
+    display: block !important;
+    width: 24px;
+    height: 24px;
+  }
+
+  .sidebar {
+    transform: translateX(-100%);
+  }
+
+  .wraper > .row {
+    margin-left: 0;
+    width: 100%;
+  }
+}
