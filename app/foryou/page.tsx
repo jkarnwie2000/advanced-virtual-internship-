@@ -2,10 +2,13 @@
 
 import { useState } from "react";
 
-const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
 
 export default function ForYouPage() {
+
+const [sidebarOpen, setSidebarOpen] = useState(false);
+
   return (
     <div id="__next">
         <div className="wraper">
