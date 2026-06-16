@@ -1,3 +1,9 @@
+"use client";
+
+import { useState } from "react";
+
+const [sidebarOpen, setSidebarOpen] = useState(false);
+
 
 export default function ForYouPage() {
   return (
