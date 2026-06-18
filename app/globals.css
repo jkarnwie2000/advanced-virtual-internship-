@@ -485,6 +485,7 @@ button:disabled {
 
 .selected__book--line {
   width: 1px;
+  height: 140px;
   background-color: #bac8ce;
 }
 
@@ -525,12 +526,15 @@ button:disabled {
     margin-bottom: 8px;
 }
 
+.selected__book--content {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
 
 .selected__book--content, .selected__book--text {
         width: 100%;
-    }
-
-
+ }
 
 
 /* NUMBERS */
@@ -1048,17 +1052,7 @@ element.style {
     margin-bottom: 32px;
 }
 
-.for-you__recommended--books-link {
-    position: relative;
-    scroll-snap-align: start;
-    padding: 32px 12px 12px;
-    text-decoration: none;
-    border-radius: 4px;
-    max-width: 200px;
-    width: 100%;
-}
-
- @media (max-width: 734px) {
+@media (max-width: 734px) {
   .search__background {
     margin-left: 0;
   }
