@@ -703,6 +703,13 @@ button:disabled {
 }
 
 
+@media (max-width: 768px) {
+    .sidebar
+ {
+    transform: translateX(-100%);
+  }
+}
+
 /**For You Page**/
 
 * {
@@ -859,6 +866,11 @@ element.style {
     pointer-events: auto;
 }
 
+.sidebar--opened {
+    transform: translateX(0);
+    width: 80%;
+}
+
 .sidebar__overlay--hidden {
     opacity: 0;
     pointer-events: none;
@@ -902,8 +914,7 @@ element.style {
 
 .sidebar__toggle--btn svg {
     width: 24px;
-    height: 24px;
-    display: none;
+    height: 24px;    
 }
 
 .search__icon svg {
@@ -971,6 +982,7 @@ element.style {
     margin-bottom: 24px;
     gap: 24px;
 }
+
 
 .for-you__sub--title {
     font-weight: 300;
@@ -1049,14 +1061,8 @@ element.style {
     cursor: pointer;
     position: relative;
     z-index: 2000;
-  }
-
+  }  
   
-  .sidebar__toggle--btn svg {
-    display: block !important;
-    width: 24px;
-    height: 24px;
-  }
 
   .sidebar {
     transform: translateX(-100%);
