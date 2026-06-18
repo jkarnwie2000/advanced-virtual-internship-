@@ -859,6 +859,11 @@ element.style {
     pointer-events: auto;
 }
 
+.sidebar__overlay--hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
 .sidebar--opened {
     transform: translateX(0);
     width: 80%;
