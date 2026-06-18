@@ -536,6 +536,20 @@ button:disabled {
         width: 100%;
  }
 
+ /* RECOMMENDED FOR YOU SECTION */
+
+.recommended__books {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+}
+
+.recommended__book {
+  min-width: 180px;
+  max-width: 180px;
+}
+
+
 
 /* NUMBERS */
 .numbers {
