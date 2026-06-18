@@ -505,16 +505,6 @@ button:disabled {
     border-radius: 20px;
 }
 
-.for-you__recommended--books-link {
-    position: relative;
-    scroll-snap-align: start;
-    padding: 32px 12px 12px;
-    text-decoration: none;
-    border-radius: 4px;
-    max-width: 200px;
-    width: 100%;
-}
-
 .selected__book--sub-title {
     color: #032b41;
     width: 40%;
@@ -538,18 +528,56 @@ button:disabled {
 
  /* RECOMMENDED FOR YOU SECTION */
 
-.recommended__books {
+ .for-you__recommended--books-link {
+  position: relative;
+  scroll-snap-align: start;
+  padding: 32px 12px 12px;
+  text-decoration: none;
+  border-radius: 4px;
+  min-width: 200px;
+  max-width: 200px;
+}
+
+ .recommended__book--author {
+  font-size: 14px;
+  color: #6b757b;
+  margin-bottom: 8px;
+}
+
+.recommended__book--sub-title {
+  font-size: 14px;
+  color: #394547;
+  margin-bottom: 8px;
+  line-height: 1.3;
+}
+
+.recommended__book--details-wrapper {
   display: flex;
-  gap: 24px;
-  overflow-x: auto;
+  align-items: center;
+  gap: 8px;
 }
 
-.recommended__book {
-  min-width: 180px;
-  max-width: 180px;
+.recommended__book--details {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  color: #6b757b;
+  font-size: 14px;
 }
 
+.recommended__book--details-icon {
+  display: flex;
+  align-items: center;
+}
 
+.for-you__recommended--books {
+    display: flex;
+    overflow-x: auto;
+    gap: 16px;
+    scroll-snap-type: mandatory;
+    scroll-snap-type: x;
+    margin-bottom: 32px;
+}
 
 /* NUMBERS */
 .numbers {
@@ -1057,14 +1085,6 @@ element.style {
     margin-bottom: 16px;
 }
 
-.for-you__recommended--books {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    scroll-snap-type: mandatory;
-    scroll-snap-type: x;
-    margin-bottom: 32px;
-}
 
 @media (max-width: 734px) {
   .search__background {
