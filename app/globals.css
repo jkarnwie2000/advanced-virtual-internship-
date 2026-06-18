@@ -500,6 +500,12 @@ button:disabled {
     gap: 24px;
  }
 
+.selected__book--content {
+    display: flex;
+    gap: 24px;
+    width: 100%;
+}
+
 .selected__book--content, .selected__book--text {
         width: 100%;
     }
@@ -1032,10 +1038,12 @@ element.style {
     width: 100%;
 }
 
-.selected__book {
-        width: 100%;
-        flex-direction: column;
-        gap: 24px;
+.selected__book {  
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
     }
 
 
