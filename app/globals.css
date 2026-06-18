@@ -473,6 +473,40 @@ button:disabled {
   justify-content: center;
 }
 
+
+/* SELECTED JUST FOR YOU SECTION */
+
+.selected__book--sub-title {
+    color: #032b41;
+    width: 40%;
+}
+
+.selected__book--title {
+    font-weight: 600;
+    color: #032b41;
+    margin-bottom: 8px;
+}
+
+.selected__book {
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+}
+
+
+.selected__book {
+    width: 100%;
+    flex-direction: column;
+    gap: 24px;
+ }
+
+.selected__book--content, .selected__book--text {
+        width: 100%;
+    }
+
+
+
+
 /* NUMBERS */
 .numbers {
   background-color: #d7e9ff;
@@ -997,15 +1031,6 @@ element.style {
     max-width: 200px;
     width: 100%;
 }
-
-.selected__book--sub-title {
-    color: #032b41;
-    width: 40%;
-}
-
-.selected__book {
-        padding: 16px;
-    }
 
 .selected__book {
         width: 100%;
