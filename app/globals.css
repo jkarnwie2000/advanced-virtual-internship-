@@ -963,14 +963,10 @@ element.style {
     pointer-events: none;
 }
 
-/* ADD THESE TWO NEW RULES HERE */
-.sidebar--open {
+.sidebar--opened {
+    transform: translateX(0);
+    width: 80%;
 }
-
-.sidebar--closed {
-}
-
-/* ADD THESE TWO NEW RULES HERE */
 
 .wraper > .row {
   margin-left: 200px;
@@ -1005,8 +1001,7 @@ element.style {
 
 .sidebar__toggle--btn svg {
     width: 24px;
-    height: 24px;
-    display: none;
+    height: 24px;   
 }
 
 .search__icon svg {
@@ -1082,40 +1077,46 @@ element.style {
     margin-bottom: 16px;
 }
 
-
-/* SIDEBAR - DESKTOP DEFAULT (visible all the time) */
-.sidebar {
-    background-color: #f7faf9;
-    width: 200px;
-    min-width: 200px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    z-index: 1000;
-    transition: all .3s;
+.sidebar__toggle--btn {
+  display: none;
 }
 
-/* ... rest of sidebar CSS ... */
-
-/* MOBILE ONLY */
 @media (max-width: 734px) {
+  .sidebar__toggle--btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    color: #032b41;
+    cursor: pointer;
+    position: relative;
+    z-index: 2000;
+  }
+
+  .sidebar__toggle--btn svg {
+    display: block !important;
+    width: 24px;
+    height: 24px;
+  }
+
   .sidebar {
-    transform: translateX(-100%);  /* Hidden by default on mobile */
+    transform: translateX(-100%);
     width: 80%;
   }
 
   .sidebar--open {
-    transform: translateX(0) !important;  /* Show on mobile when open */
+    transform: translateX(0) !important;
   }
 
   .sidebar--closed {
-    transform: translateX(-100%);  /* Hide on mobile when closed */
+    transform: translateX(-100%);
   }
 
-  /* ... rest of mobile rules ... */
-}
-
+  .search__background {
+    margin-left: 0;
+  }
 
   .search__wrapper {
     width: 100%;
@@ -1137,32 +1138,8 @@ element.style {
     flex: 1;
   }
 
-  .sidebar__toggle--btn {
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-    color: #032b41;
-    cursor: pointer;
-    position: relative;
-    z-index: 2000;
-}
-
-  
-  .sidebar__toggle--btn svg {
-    display: block !important;
-    width: 24px;
-    height: 24px;
-  }
-
-  .sidebar {
-    transform: translateX(-100%);
-    width: 80%;
-}
-
   .wraper > .row {
     margin-left: 0;
     width: 100%;
+  }
 }
