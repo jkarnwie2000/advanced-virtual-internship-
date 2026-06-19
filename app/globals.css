@@ -861,13 +861,6 @@ div {
     height: 100%;
 }
 
-.sidebar__toggle--btn {
-  display: none;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  color: #032b41;
-}
 
 .search__content {
     display: flex;
@@ -1089,6 +1082,10 @@ element.style {
 @media (max-width: 734px) {
   .search__background {
     margin-left: 0;
+    .sidebar {
+    transform: translateX(-100%);
+  }
+    
   }
 
   .search__wrapper {
@@ -1112,7 +1109,7 @@ element.style {
   }
 
   .sidebar__toggle--btn {
-    display: none;
+    display: flex !important;
     align-items: center;
     justify-content: center;
     width: 40px;
@@ -1122,7 +1119,7 @@ element.style {
     cursor: pointer;
     position: relative;
     z-index: 2000;
-  }
+}
 
   
   .sidebar__toggle--btn svg {
@@ -1133,7 +1130,8 @@ element.style {
 
   .sidebar {
     transform: translateX(-100%);
-  }
+    width: 80%;
+}
 
   .wraper > .row {
     margin-left: 0;
