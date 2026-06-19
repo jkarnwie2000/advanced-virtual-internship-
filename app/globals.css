@@ -1082,10 +1082,6 @@ element.style {
 @media (max-width: 734px) {
   .search__background {
     margin-left: 0;
-    .sidebar {
-    transform: translateX(-100%);
-  }
-    
   }
 
   .search__wrapper {
@@ -1108,6 +1104,19 @@ element.style {
     flex: 1;
   }
 
+  .sidebar {
+    transform: translateX(-100%);
+    width: 80%;
+  }
+
+  .sidebar--open {
+    transform: translateX(0) !important;
+  }
+
+  .sidebar--closed {
+    transform: translateX(-100%);
+  }
+
   .sidebar__toggle--btn {
     display: flex !important;
     align-items: center;
@@ -1119,19 +1128,13 @@ element.style {
     cursor: pointer;
     position: relative;
     z-index: 2000;
-}
+  }
 
-  
   .sidebar__toggle--btn svg {
     display: block !important;
     width: 24px;
     height: 24px;
   }
-
-  .sidebar {
-    transform: translateX(-100%);
-    width: 80%;
-}
 
   .wraper > .row {
     margin-left: 0;
