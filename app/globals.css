@@ -1081,7 +1081,7 @@ element.style {
   display: none;
 }
 
-@media (max-width: 734px) {
+@media (max-width: 768px) {
   .sidebar__toggle--btn {
     display: flex !important;
     align-items: center;
