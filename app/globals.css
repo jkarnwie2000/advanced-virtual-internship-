@@ -820,7 +820,8 @@ button:disabled {
 
 .container {
     padding: 40px 0;
-    width: 100%;
+    width: calc(100% - 250px);
+    margin-left: auto;
 }
 
 div {
