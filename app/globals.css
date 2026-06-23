@@ -1157,3 +1157,66 @@ element.style {
 .sidebar__link--wrapper.active {
   border-left: 5px solid #2bd97c;
 }
+
+/* LIBRARY PAGE CODES */
+
+.for-you__title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #032b41;
+    margin-bottom: 16px;
+}
+
+.for-you__sub--title {
+    font-weight: 300;
+    color: #394547;
+    margin-bottom: 16px;
+}
+
+.finished__books--block-wrapper {
+    background-color: #f1f6f4;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px;
+    border-radius: 12px;
+    margin: 0 auto 56px;
+    text-align: center;
+}
+
+.finished__books--block-wrapper {
+    background-color: #f1f6f4;
+    max-width: -moz-fit-content;
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    padding: 32px;
+    border-radius: 12px;
+    margin: 0 auto 56px;
+    text-align: center;
+}
+
+.for-you__recommended--books-link {
+    position: relative;
+    scroll-snap-align: start;
+    padding: 32px 12px 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    max-width: 200px;
+    width: 100%;
+}
+
+.finished__books--title {
+    color: #042330;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.finished__books--sub-title {
+    color: #394547;
+}
