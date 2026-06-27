@@ -1277,3 +1277,7 @@ a {
     text-decoration: none;
     color: inherit;
 }
+
+.settings__container {
+    margin-left: 0px;
+}
