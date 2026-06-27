@@ -819,9 +819,10 @@ button:disabled {
 }
 
 .container {
-    padding: 40px 0;
-    width: calc(100% - 250px);
-    margin-left: auto;
+  padding: 40px 32px;
+  width: 100%;
+  max-width: 1070px;
+  margin: 0 auto;
 }
 
 div {
@@ -900,8 +901,7 @@ div {
     width: 100%;
 }
 
-.search__background {
-  margin-left: 200px;
+.search__background {  
   height: 80px;
   border-bottom: 1px solid #e1e7ea;
   background-color: #fff;  
