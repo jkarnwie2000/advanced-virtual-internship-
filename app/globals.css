@@ -825,18 +825,33 @@ button:disabled {
   margin: 0 auto;
 }
 
+.wrapper > .row {
+  width: 100%;
+  max-width: 1070px;
+  margin-left: 0;
+  margin-right: auto;
+  padding: 0;
+}
+
+.wrapper > .row > .container {
+  width: 100%;
+  max-width: 1070px;
+  margin: 0;
+  padding: 40px 32px;
+}
+
 div {
     display: block;
     unicode-bidi: isolate;
 }
 
 .wrapper {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    margin-left: 200px;
-    width: calc(100% - 200px);
-    transition: all .3s;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin-left: 200px;
+  width: calc(100% - 200px);
+  transition: all .3s;
 }
 
 .search__input {
