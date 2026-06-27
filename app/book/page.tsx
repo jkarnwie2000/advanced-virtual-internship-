@@ -1,7 +1,7 @@
 "use client";
 
 
-const BookPage = ({ book }: { book: Book }) => {
+export default function BookPage(){
 return (
 <>
 <div id="__next">

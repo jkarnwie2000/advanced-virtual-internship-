@@ -228,7 +228,7 @@ export default function LibraryPage() {
          1 Item
         </div>
         <div className="for-you__recommended--books">
-          <a
+          <Link 
             className="for-you__recommended--books-link"
             href="/book/5bxl50cz4bt"
           >
@@ -286,7 +286,7 @@ export default function LibraryPage() {
                 <div className="recommended__book--details-text">4.4</div>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
         <div className="for-you__title">Finished</div>
         <div className="for-you__sub--title">
