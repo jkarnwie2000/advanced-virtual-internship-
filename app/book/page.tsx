@@ -201,4 +201,3 @@ return (
 );
 };
 
-export default BookPage;

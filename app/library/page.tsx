@@ -230,7 +230,7 @@ export default function LibraryPage() {
         <div className="for-you__recommended--books">
           <Link 
             className="for-you__recommended--books-link"
-            href="/book/5bxl50cz4bt"
+            href="/book"
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
             <figure
