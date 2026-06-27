@@ -14,7 +14,7 @@ export default function ForYouPage() {
 
   return (
     <div id="__next">
-      <div className="wraper">
+      <div className="wrapper">
         <div className="search__background">
           <div className="search__wrapper">
             <div className="search__content">

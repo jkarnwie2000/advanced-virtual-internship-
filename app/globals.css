@@ -963,12 +963,12 @@ element.style {
     width: 80%;
 }
 
-.wraper > .row {
+.wrapper > .row { 
   margin-left: 200px;
   width: calc(100% - 200px);
 }
 
-.wraper > .row .container {
+.wrapper > .row .container {
   max-width: 1070px;
   margin: 0 auto;
   padding: 40px 32px;
@@ -1118,7 +1118,7 @@ element.style {
     flex: 1;
   }
 
-  .wraper > .row {
+  .wrapper > .row {
     margin-left: 0;
     width: 100%;
   }
