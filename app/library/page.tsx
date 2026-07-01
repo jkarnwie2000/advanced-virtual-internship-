@@ -221,7 +221,7 @@ export default function LibraryPage() {
             </div>
           </div>
         </div>
-      </div>
+      <div className ="row"> 
       <div className="container">
         <div className="for-you__title">Saved Books</div>
         <div className="for-you__sub--title">
@@ -595,6 +595,8 @@ export default function LibraryPage() {
           </a>
         </div>
       </div>
+     </div>
     </div>
+   </div>
   );
 }
