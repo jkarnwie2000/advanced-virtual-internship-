@@ -1296,9 +1296,10 @@ a {
 /* BOOK PAGE CODES */
 
 .book-page__row {
-  width: 100% !important;
+  width: calc(100% - 200px) !important;
   max-width: 1070px !important;
-  margin: 0 auto !important;
+  margin-left: 200px !important;
+  margin-right: auto !important;
   padding: 0 32px !important;
 }
 
@@ -1384,3 +1385,4 @@ a {
   height: 100%;
   object-fit: cover;
 }
+
