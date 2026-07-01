@@ -8,8 +8,6 @@ return (
 <div className="wrapper">
 <div className="search__background">
 <div className="search__wrapper">
-<figure>
-    <img src="logo" alt=""/></figure>
 <div className="search__content">
 <div className="search">
 <div className="search__input--wrapper">
@@ -32,7 +30,7 @@ return (
 <div className="sidebar__overlay sidebar__overlay--hidden"></div>
 <div className="sidebar sidebar--closed">
 <div className="sidebar__logo">
-<img alt="" srcSet="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&amp;w=640&amp;q=75 1x, /_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&amp;w=1080&amp;q=75 2x" src="/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&amp;w=1080&amp;q=75" width="495" height="114" decoding="async" data-nimg="1" loading="lazy" style={{ color: 'transparent' }}/></div>
+<img src="https://summarist.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&w=1080&q=75" alt="Logo"/></div>
 <div className="sidebar__wrapper">
 <div className="sidebar__top">
 <a className="sidebar__link--wrapper" href="/for-you">
@@ -109,9 +107,9 @@ return (
 </div>
 </div>
 </div>
-<div className="row">
+<div className="row book-page__row">
 <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
-<div className="container">
+<div className="container book-page__container">
 <div className="inner__wrapper">
 <div className="inner__book">
 <div className="inner-book__title">How to Win Friends and Influence People in the Digital Age </div>
