@@ -1,12 +1,40 @@
 "use client";
+
+import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 
+export default function BookPage() {
+  const params = useParams();
+  const bookId = params.id;
 
-export default function BookPage(){
-const params = useParams();
-const bookId = params.id;
+  const [book, setBook] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-return (
+  useEffect(() => {
+    async function fetchBook() {
+      const response = await fetch(
+        `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
+      );
+
+      const data = await response.json();
+      setBook(data);
+      setLoading(false);
+    }
+
+    if (bookId) {
+      fetchBook();
+    }
+  }, [bookId]);
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!book) {
+    return <div>Book not found</div>;
+  }
+
+ return (
 <>
 <div id="__next">
 <div className="wrapper">
@@ -116,9 +144,9 @@ return (
 <div className="container book-page__container">
 <div className="inner__wrapper">
 <div className="inner__book">
-<div className="inner-book__title">How to Win Friends and Influence People in the Digital Age </div>
-<div className="inner-book__author">Dale Carnegie</div>
-<div className="inner-book__sub--title">Time-tested advice for the digital age</div>
+<div className="inner-book__title">{book.title}</div>
+<div className="inner-book__author">{book.author}</div>
+<div className="inner-book__sub--title">{book.subTitle}</div>
 <div className="inner-book__wrapper">
 <div className="inner-book__description--wrapper">
 <div className="inner-book__description">
@@ -193,7 +221,7 @@ return (
 </div>
 <div className="inner-book--img-wrapper">
 <figure className="book__image--wrapper" style={{"height": "300px", "width": "300px", "minWidth": "300px"}}>
-    <img className="book__image" src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Fimages%2Fhow-to-win-friends-and-influence-people.png?alt=media&amp;token=099193aa-4d85-4e22-8eb7-55f12a235fe2" alt="book" style={{"display": "block"}}/></figure>
+    <img className="book__image" src={book.imageLink} alt={book.title} /></figure>
 </div>
 </div>
 </div>
