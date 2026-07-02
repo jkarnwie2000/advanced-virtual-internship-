@@ -1,11 +1,11 @@
 "use client";
-
 import { useParams } from "next/navigation";
 
+
+export default function BookPage(){
 const params = useParams();
 const bookId = params.id;
 
-export default function BookPage(){
 return (
 <>
 <div id="__next">

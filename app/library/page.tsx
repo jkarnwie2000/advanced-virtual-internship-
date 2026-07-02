@@ -230,7 +230,7 @@ export default function LibraryPage() {
         <div className="for-you__recommended--books">
           <Link 
             className="for-you__recommended--books-link"
-            href="/book"
+            href={`/book/${book.id}`}
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
             <figure
@@ -293,9 +293,9 @@ export default function LibraryPage() {
         5 Items
         </div>
         <div className="for-you__recommended--books">
-          <a
+          <Link
             className="for-you__recommended--books-link"
-            href="/book/18tro3gle2p"
+            href={`/book/${book.id}`}
           >
             <div className="book__pill book__pill--subscription-required">
               Premium
@@ -354,10 +354,10 @@ export default function LibraryPage() {
                 <div className="recommended__book--details-text">4.6</div>
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="for-you__recommended--books-link"
-            href="/book/2l0idxm1rvw"
+            href={`/book/${book.id}`}
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fcan't-hurt-me.mp3?alt=media&amp;token=7de57406-60ca-49d6-9113-857507f48312"></audio>
             <figure
@@ -411,10 +411,10 @@ export default function LibraryPage() {
                 <div className="recommended__book--details-text">4.2</div>
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="for-you__recommended--books-link"
-            href="/book/2ozpy1q1pbt"
+            href={`/book/${book.id}`}
           >
             <div className="book__pill book__pill--subscription-required">
               Premium
@@ -473,10 +473,10 @@ export default function LibraryPage() {
                 <div className="recommended__book--details-text">4.8</div>
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="for-you__recommended--books-link"
-            href="/book/4t0amyb4upc"
+            href={`/book/${book.id}`}
           >
             <div className="book__pill book__pill--subscription-required">
               Premium
@@ -533,10 +533,10 @@ export default function LibraryPage() {
                 <div className="recommended__book--details-text">4.3</div>
               </div>
             </div>
-          </a>
-          <a
+          </Link>
+          <Link
             className="for-you__recommended--books-link"
-            href="/book/5bxl50cz4bt"
+            href={`/book/${book.id}`}
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
             <figure
@@ -592,7 +592,7 @@ export default function LibraryPage() {
                 <div className="recommended__book--details-text">4.4</div>
               </div>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
      </div>
