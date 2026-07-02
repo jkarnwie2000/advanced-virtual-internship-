@@ -1,5 +1,9 @@
 "use client";
 
+import { useParams } from "next/navigation";
+
+const params = useParams();
+const bookId = params.id;
 
 export default function BookPage(){
 return (
