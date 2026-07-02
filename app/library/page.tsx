@@ -230,7 +230,7 @@ export default function LibraryPage() {
         <div className="for-you__recommended--books">
           <Link 
             className="for-you__recommended--books-link"
-            href={`/book/${book.id}`}
+            href="/book/5bxl50cz4bt" 
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
             <figure
@@ -295,7 +295,7 @@ export default function LibraryPage() {
         <div className="for-you__recommended--books">
           <Link
             className="for-you__recommended--books-link"
-            href={`/book/${book.id}`}
+            href="/book/18tro3gle2p"
           >
             <div className="book__pill book__pill--subscription-required">
               Premium
@@ -357,7 +357,7 @@ export default function LibraryPage() {
           </Link>
           <Link
             className="for-you__recommended--books-link"
-            href={`/book/${book.id}`}
+            href="/book/2l0idxm1rvw"
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fcan't-hurt-me.mp3?alt=media&amp;token=7de57406-60ca-49d6-9113-857507f48312"></audio>
             <figure
@@ -414,7 +414,7 @@ export default function LibraryPage() {
           </Link>
           <Link
             className="for-you__recommended--books-link"
-            href={`/book/${book.id}`}
+            href="/book/2ozpy1q1pbt"
           >
             <div className="book__pill book__pill--subscription-required">
               Premium
@@ -476,7 +476,7 @@ export default function LibraryPage() {
           </Link>
           <Link
             className="for-you__recommended--books-link"
-            href={`/book/${book.id}`}
+            href="/book/4t0amyb4upc"
           >
             <div className="book__pill book__pill--subscription-required">
               Premium
@@ -536,7 +536,7 @@ export default function LibraryPage() {
           </Link>
           <Link
             className="for-you__recommended--books-link"
-            href={`/book/${book.id}`}
+            href="/book/5bxl50cz4bt"
           >
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
             <figure
