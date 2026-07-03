@@ -34,8 +34,9 @@ export default function BookPage() {
     return <div>Book not found</div>;
   }
 
- return (
-<>
+
+ return ( 
+
 <div id="__next">
 <div className="wrapper">
 <div className="search__background">
@@ -83,7 +84,7 @@ export default function BookPage() {
     </div>
     <div className="sidebar__link--text">My Library</div>
     </a>
-<div className="sidebar__link--wrapper sidebar__link--not-allowed"></div>
+<div className="sidebar__link--wrapper sidebar__link--not-allowed">
 <div className="sidebar__link--line "></div>
 <div className="sidebar__icon--wrapper">
 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
@@ -227,7 +228,6 @@ export default function BookPage() {
 </div>
 </div>
 </div>
-</>
+</div>
 );
-};
-
+}
