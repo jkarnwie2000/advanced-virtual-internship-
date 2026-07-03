@@ -1296,10 +1296,9 @@ a {
 /* BOOK PAGE CODES */
 
 .book-page__row {
-  width: calc(100% - 200px) !important;
+  width: 100% !important;
   max-width: 1070px !important;
-  margin-left: 200px !important;
-  margin-right: auto !important;
+  margin: 0 auto !important;
   padding: 0 32px !important;
 }
 
