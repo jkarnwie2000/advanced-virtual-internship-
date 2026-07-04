@@ -1475,3 +1475,45 @@ a {
   line-height: 1.5;
   margin-bottom: 16px;
 }
+
+/* AUDIO BOOK PAGE CODES */
+
+.audio__book--summary-text {
+    white-space: pre-line;
+    line-height: 1.4;
+    color: #032b41;
+}
+
+.audio__wrapper {
+    width: 100%;
+    height: 80px;
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #042330;
+    padding: 0 40px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+}
+
+.audio__track--wrapper {
+    display: flex;
+    gap: 12px;
+}
+
+.audio__track--details-wrapper {
+    color: #fff;
+    font-size: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    justify-content: center;
+}
+
+.audio__track--author {
+    color: #bac8ce;
+}
+

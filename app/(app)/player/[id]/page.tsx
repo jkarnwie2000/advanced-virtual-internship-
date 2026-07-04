@@ -65,7 +65,7 @@ export default function PlayerPage() {
 </div>
 <div className="audio__progress--wrapper">
 <div className="audio__time">00:00</div>
-<input type="range" className="audio__progress--bar" value="0" max="165.36" style={{ background: "linear-gradient(to right, rgb(43, 217, 124) 0%, rgb(109, 120, 125) 0%)", "--range-progress": "0%" }}/>
+<input type="range" className="audio__progress--bar" max="165.36" style={{ background: "linear-gradient(to right, rgb(43, 217, 124) 0%, rgb(109, 120, 125) 0%)", "--range-progress": "0%" }}/>
 <div className="audio__time">02:45</div>
 </div>
 </div>
