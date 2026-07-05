@@ -8,14 +8,18 @@ type AuthModalProps = {
   onClose: () => void;
 };
 
-export default function AuthModal({ onClose }: AuthModalProps) {
+export default function AuthModal({ onClose, redirectTo }: AuthModalProps) {
   const [isLogin, setIsLogin] = useState(true);
 
   return (
     <div className="auth-container">
       <button onClick={onClose} className="btn-close">X</button>
 
-      {isLogin ? <LoginForm /> : <RegisterForm />}
+      {isLogin ? (
+          <LoginForm redirectTo={redirectTo} />
+        ) : (
+          <RegisterForm />
+      )}
 
       <button onClick={() => setIsLogin(!isLogin)}>
         {isLogin ? "Sign Up" : "Sign In"}

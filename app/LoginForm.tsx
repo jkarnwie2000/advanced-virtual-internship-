@@ -7,7 +7,12 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import LoginIcon from "./components/LoginIcon";
 import GoogleIcon from "./components/GoogleIcon";
 
-export default function LoginForm() {
+type AuthModalProps = {
+  onClose: () => void;
+  redirectTo?: string;
+};
+
+export default function LoginForm({ redirectTo = "/foryou" }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");    
   const router = useRouter();
@@ -30,8 +35,14 @@ export default function LoginForm() {
       password
     );
 
-    console.log("Login successful:", result.user);
-    window.location.href = "/";
+    const result = await signInWithEmailAndPassword(
+      auth,
+      cleanedEmail,
+      password
+    );
+
+      console.log("Login successful:", result.user);
+      router.push(redirectTo);
   } 
   
     catch (error) {
