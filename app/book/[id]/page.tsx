@@ -40,8 +40,6 @@ export default function BookPage() {
     return <div>Book not found</div>;
   }
 
-  const router = useRouter();
-
 const handleReadListen = () => {
   const user = auth.currentUser;
 
@@ -58,31 +56,15 @@ const handleReadListen = () => {
   router.push(`/player/${bookId}`);
 };
 
-const handleReadListen = () => {
-const user = auth.currentUser;
-
-  if (!user) {
-    setIsAuthModalOpen(true);
-    return;
-  }
-
-  if (book.subscriptionRequired) {
-    router.push("/choose-plan");
-    return;
-  }
-
-  router.push(`/player/${bookId}`);
-};
-
 return ( 
-
 <div id="__next">
-
 {isAuthModalOpen && (
-  <AuthModal onClose={() => setIsAuthModalOpen(false)} />
+  <AuthModal
+  onClose={() => setIsAuthModalOpen(false)}
+  redirectTo={`/player/${bookId}`}
+/>
 )}
-
-<div className="wrapper">
+<div className="wrapper">  
 <div className="search__background">
 <div className="search__wrapper">
 <div className="search__content">
@@ -274,5 +256,5 @@ return (
 </div>
 </div>
 );
-}
 
+};
