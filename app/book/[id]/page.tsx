@@ -1,17 +1,17 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { auth } from "../../../firebaseConfig";
+import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 import AuthModal from "../../AuthModal";
-
 
 export default function BookPage() {
   const params = useParams();
   const bookId = params.id;
 
   const router = useRouter();
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);  
 
   const [book, setBook] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -40,14 +40,9 @@ export default function BookPage() {
     return <div>Book not found</div>;
   }
 
+  const router = useRouter();
 
-
-
-
-
-
-
-  const handleReadListen = () => {
+const handleReadListen = () => {
   const user = auth.currentUser;
 
   if (!user) {
@@ -63,15 +58,29 @@ export default function BookPage() {
   router.push(`/player/${bookId}`);
 };
 
+const handleReadListen = () => {
+const user = auth.currentUser;
 
+  if (!user) {
+    setIsAuthModalOpen(true);
+    return;
+  }
 
- return ( 
+  if (book.subscriptionRequired) {
+    router.push("/choose-plan");
+    return;
+  }
+
+  router.push(`/player/${bookId}`);
+};
+
+return ( 
 
 <div id="__next">
 
- {isAuthModalOpen && (
-      <AuthModal onClose={() => setIsAuthModalOpen(false)} />
-    )}
+{isAuthModalOpen && (
+  <AuthModal onClose={() => setIsAuthModalOpen(false)} />
+)}
 
 <div className="wrapper">
 <div className="search__background">
@@ -266,3 +275,4 @@ export default function BookPage() {
 </div>
 );
 }
+

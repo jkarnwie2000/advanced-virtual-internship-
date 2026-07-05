@@ -17,9 +17,9 @@ export default function AuthModal({ onClose, redirectTo }: AuthModalProps) {
       <button onClick={onClose} className="btn-close">X</button>
 
       {isLogin ? (
-          <LoginForm redirectTo={redirectTo} />
-        ) : (
-          <RegisterForm />
+        <LoginForm redirectTo={redirectTo} />
+      ) : (
+        <RegisterForm />
       )}
 
       <button onClick={() => setIsLogin(!isLogin)}>
