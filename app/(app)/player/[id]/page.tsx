@@ -39,7 +39,7 @@ export default function PlayerPage() {
 </div>
 <div className="audio__book--summary-text">{book.summary}</div>
  <div className="audio__wrapper">
-{book.audioLink}
+<audio src={book.audioLink}></audio>
 <div className="audio__track--wrapper">
 <figure className="audio__track--image-mask"></figure>
 <figure className="book__image--wrapper" style={{ height: "48px", width: "48px", minWidth: "48px" }}>
