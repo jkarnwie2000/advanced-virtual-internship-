@@ -6,6 +6,7 @@ import RegisterForm from "./RegisterForm";
 
 type AuthModalProps = {
   onClose: () => void;
+  redirectTo?: string;
 };
 
 export default function AuthModal({ onClose, redirectTo }: AuthModalProps) {

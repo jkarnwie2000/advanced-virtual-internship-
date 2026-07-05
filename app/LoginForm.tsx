@@ -29,13 +29,7 @@ export default function LoginForm({ redirectTo = "/foryou" }) {
       return;
     }
 
-    const result = await signInWithEmailAndPassword(
-      auth,
-      cleanedEmail,
-      password
-    );
-
-    const result = await signInWithEmailAndPassword(
+   const result = await signInWithEmailAndPassword(
       auth,
       cleanedEmail,
       password
