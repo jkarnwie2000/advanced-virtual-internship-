@@ -7,22 +7,29 @@ export default function PlayerPage() {
   const params = useParams();
   const bookId = params.id;
 
-  const [book, setBook] = useState(null);
+  const [book, setBook] = useState<any>(null);
 
-useEffect(() => {
-  async function fetchBook() {
-    const res = await fetch(
-      `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
-    );
-    const data = await res.json();
-    setBook(data);
+  useEffect(() => {
+    async function fetchBook() {
+      const res = await fetch(
+        `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
+      );
+
+      const data = await res.json();
+      setBook(data);
+    }
+
+    if (bookId) {
+      fetchBook();
+    }
+  }, [bookId]);
+
+  if (!book) {
+    return <div>Loading...</div>;
   }
 
-  if (bookId) fetchBook();
-}, [bookId]);
-
-  return (
-    <div id="__next">
+ return (
+<div id="__next">
 <div className="wrapper wrapper__full">
 <div className="sidebar__overlay sidebar__overlay--hidden"></div>
 <div className="summary">
