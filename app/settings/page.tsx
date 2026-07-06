@@ -60,7 +60,7 @@ export default function Settings() {
           </div>
           <div className="sidebar__wrapper">
             <div className="sidebar__top">
-              <a className="sidebar__link--wrapper" href="/for-you">
+              <a className="sidebar__link--wrapper" href="/foryou">
                 <div className="sidebar__link--line "></div>
                 <div className="sidebar__icon--wrapper">
                   <svg

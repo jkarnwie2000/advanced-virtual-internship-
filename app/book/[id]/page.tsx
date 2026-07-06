@@ -49,11 +49,6 @@ const handleReadListen = () => {
     return;
   }
 
-  if (book.subscriptionRequired) {
-    router.push("/choose-plan");
-    return;
-  }
-
   router.push(`/player/${bookId}`);
 };
 
@@ -93,7 +88,7 @@ return (
 <img src="https://summarist.vercel.app/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Flogo.1b1c490b.png&w=1080&q=75" alt="Logo"/></div>
 <div className="sidebar__wrapper">
 <div className="sidebar__top">
-<a className="sidebar__link--wrapper" href="/for-you">
+<a className="sidebar__link--wrapper" href="/foryou">
 <div className="sidebar__link--line "></div>
 <div className="sidebar__icon--wrapper">
 <svg stroke="currentColor" fill="currentColor" strokeWidth="0" viewBox="0 0 1024 1024" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg">
