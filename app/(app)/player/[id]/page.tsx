@@ -3,55 +3,55 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useParams } from "next/navigation";
 
-
 export default function PlayerPage() {
-const audioRef = useRef<HTMLAudioElement | null>(null);
-const [isPlaying, setIsPlaying] = useState(false);
-const [currentTime, setCurrentTime] = useState(0);
-const [duration, setDuration] = useState(0);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [currentTime, setCurrentTime] = useState(0);
+  const [duration, setDuration] = useState(0);
+  const [fontSize, setFontSize] = useState(16);
 
-const formatTime = (time: number) => {
-  if (!time || isNaN(time)) return "00:00";
+  const formatTime = (time: number) => {
+    if (!time || isNaN(time)) return "00:00";
 
-  const minutes = Math.floor(time / 60);
-  const seconds = Math.floor(time % 60);
+    const minutes = Math.floor(time / 60);
+    const seconds = Math.floor(time % 60);
 
-  return `${minutes}:${seconds.toString().padStart(2, "0")}`;
-};
+    return `${minutes}:${seconds.toString().padStart(2, "0")}`;
+  };
 
-const toggleAudio = () => {
-  const audio = audioRef.current;
-  if (!audio) return;
+  const toggleAudio = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  if (isPlaying) {
-    audio.pause();
-    setIsPlaying(false);
-  } else {
-    audio.play();
-    setIsPlaying(true);
-  }
-};
+    if (isPlaying) {
+      audio.pause();
+      setIsPlaying(false);
+    } else {
+      audio.play();
+      setIsPlaying(true);
+    }
+  };
 
-const skipAudio = (seconds: number) => {
-  const audio = audioRef.current;
-  if (!audio) return;
+  const skipAudio = (seconds: number) => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  audio.currentTime = Math.max(
-    0,
-    Math.min(audio.currentTime + seconds, duration || audio.duration)
-  );
+    audio.currentTime = Math.max(
+      0,
+      Math.min(audio.currentTime + seconds, duration || audio.duration),
+    );
 
-  setCurrentTime(audio.currentTime);
-};
+    setCurrentTime(audio.currentTime);
+  };
 
-const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-  const audio = audioRef.current;
-  if (!audio) return;
+  const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const audio = audioRef.current;
+    if (!audio) return;
 
-  const newTime = Number(event.target.value);
-  audio.currentTime = newTime;
-  setCurrentTime(newTime);
-};
+    const newTime = Number(event.target.value);
+    audio.currentTime = newTime;
+    setCurrentTime(newTime);
+  };
 
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const pathname = usePathname();
@@ -63,42 +63,42 @@ const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   const [book, setBook] = useState<any>(null);
 
   useEffect(() => {
-  async function fetchBook() {
-    setBook(null);
-    setCurrentTime(0);
-    setDuration(0);
-    setIsPlaying(false);
+    async function fetchBook() {
+      setBook(null);
+      setCurrentTime(0);
+      setDuration(0);
+      setIsPlaying(false);
 
-    if (audioRef.current) {
-      audioRef.current.pause();
-      audioRef.current.currentTime = 0;
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+      }
+
+      const res = await fetch(
+        `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`,
+      );
+
+      const data = await res.json();
+      setBook(data);
     }
 
-    const res = await fetch(
-      `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
-    );
+    if (bookId) {
+      fetchBook();
+    }
+  }, [bookId]);
 
-    const data = await res.json();
-    setBook(data);
+  if (!book) {
+    return <div>Loading...</div>;
   }
 
-  if (bookId) {
-    fetchBook();
-  }
-}, [bookId]);
+  const summaryParagraphs = (book.summary || "")
+    .split(/\n+/)
+    .filter((paragraph: string) => paragraph.trim() !== "");
 
-if (!book) {
-  return <div>Loading...</div>;
-}
-
-const summaryParagraphs = (book.summary || "")
-  .split(/\n+/)
-  .filter((paragraph: string) => paragraph.trim() !== "");
-
-return (
-<div id="__next">
-<div className="wrapper">
-<div className="search__background">
+  return (
+    <div id="__next">
+      <div className="wrapper">
+        <div className="search__background">
           <div className="search__wrapper">
             <div className="search__content">
               <div className="search">
@@ -235,6 +235,76 @@ return (
                 </div>
                 <div className="sidebar__link--text">Search</div>
               </div>
+              <div className="sidebar__link--wrapper sidebar__font--size-wrapper">
+                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 16 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(16)}>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    strokeWidth="0"
+                    viewBox="0 0 24 24"
+                    className={`sidebar__font--size-icon-small ${fontSize === 16 ? "sidebar__font--size-icon--active" : ""} `}
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 22 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(22)}>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    className={`sidebar__font--size-icon-medium`}
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 28 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(28)}>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    className={`sidebar__font--size-icon-large ${fontSize === 28 ? "sidebar__font--size-icon--active" : ""} `}
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+                    </g>
+                  </svg>
+                </div>
+                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 32 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(32)}>
+                  <svg
+                    stroke="currentColor"
+                    fill="currentColor"
+                    stroke-width="0"
+                    viewBox="0 0 24 24"
+                    className={`sidebar__font--size-icon-xlarge`}
+                    height="1em"
+                    width="1em"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g>
+                      <path fill="none" d="M0 0h24v24H0z"></path>
+                      <path d="M11.246 15H4.754l-2 5H.6L7 4h2l6.4 16h-2.154l-2-5zm-.8-2L8 6.885 5.554 13h4.892zM21 12.535V12h2v8h-2v-.535a4 4 0 1 1 0-6.93zM19 18a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
             </div>
             <div className="sidebar__bottom">
               <Link
@@ -307,87 +377,92 @@ return (
             </div>
           </div>
         </div>
-<div className="summary">
-<div className="audio__book--summary" style={{ fontSize: "16px" }}>
-<div className="audio__book--summary-title">
-  <b>{book.title}</b>
-</div>
-<div className="audio__book--summary-text">
-  {summaryParagraphs.map((paragraph: string, index: number) => (
-    <p key={index} className="audio__book--summary-paragraph">
-      {paragraph.trim()}
-    </p>
-  ))}
-</div>
- <div className="audio__wrapper">
-<audio
-  key={String(bookId)}
-  ref={audioRef}
-  src={book.audioLink}
-  onLoadedMetadata={() => {
-    if (audioRef.current) {
-      setDuration(audioRef.current.duration);
-    }
-  }}
-  onTimeUpdate={() => {
-    if (audioRef.current) {
-      setCurrentTime(audioRef.current.currentTime);
-    }
-  }}
-  onEnded={() => setIsPlaying(false)}
-/>
-<div className="audio__track--wrapper">
-<figure className="audio__track--image-mask"></figure>
-<figure className="book__image--wrapper" style={{ height: "48px", width: "48px", minWidth: "48px" }}>
-    <img className="book__image" src={book.imageLink} alt={book.title} />
-</figure>
-<div className="audio__track--details-wrapper">
-<div className="audio__track--title">{book.title}</div>
-<div className="audio__track--author">{book.author}</div>
-</div>
-</div>
-<div className="audio__controls--wrapper">
-<div className="audio__controls">
-<button
-  className="audio__controls--btn"
-  onClick={() => skipAudio(-10)}
->
-  ↺10
-</button>
-<button
-  className="audio__controls--btn audio__controls--btn-play"
-  onClick={toggleAudio}
->
-  {isPlaying ? "❚❚" : "▶"}
-</button>
-<button
-  className="audio__controls--btn"
-  onClick={() => skipAudio(10)}
->
-  10↻
-</button>
-</div>
-</div>
-<div className="audio__progress--wrapper">
-  <div className="audio__time">{formatTime(currentTime)}</div>
+        <div className="summary">
+          <div className="audio__book--summary" style={{ fontSize: "16px" }}>
+            <div className="audio__book--summary-title">
+              <b>{book.title}</b>
+            </div>
+            <div className="audio__book--summary-text">
+              {summaryParagraphs.map((paragraph: string, index: number) => (
+                <p key={index} className="audio__book--summary-paragraph">
+                  {paragraph.trim()}
+                </p>
+              ))}
+            </div>
+            <div className="audio__wrapper">
+              <audio
+                key={String(bookId)}
+                ref={audioRef}
+                src={book.audioLink}
+                onLoadedMetadata={() => {
+                  if (audioRef.current) {
+                    setDuration(audioRef.current.duration);
+                  }
+                }}
+                onTimeUpdate={() => {
+                  if (audioRef.current) {
+                    setCurrentTime(audioRef.current.currentTime);
+                  }
+                }}
+                onEnded={() => setIsPlaying(false)}
+              />
+              <div className="audio__track--wrapper">
+                <figure className="audio__track--image-mask"></figure>
+                <figure
+                  className="book__image--wrapper"
+                  style={{ height: "48px", width: "48px", minWidth: "48px" }}
+                >
+                  <img
+                    className="book__image"
+                    src={book.imageLink}
+                    alt={book.title}
+                  />
+                </figure>
+                <div className="audio__track--details-wrapper">
+                  <div className="audio__track--title">{book.title}</div>
+                  <div className="audio__track--author">{book.author}</div>
+                </div>
+              </div>
+              <div className="audio__controls--wrapper">
+                <div className="audio__controls">
+                  <button
+                    className="audio__controls--btn"
+                    onClick={() => skipAudio(-10)}
+                  >
+                    ↺10
+                  </button>
+                  <button
+                    className="audio__controls--btn audio__controls--btn-play"
+                    onClick={toggleAudio}
+                  >
+                    {isPlaying ? "❚❚" : "▶"}
+                  </button>
+                  <button
+                    className="audio__controls--btn"
+                    onClick={() => skipAudio(10)}
+                  >
+                    10↻
+                  </button>
+                </div>
+              </div>
+              <div className="audio__progress--wrapper">
+                <div className="audio__time">{formatTime(currentTime)}</div>
 
-  <input
-    type="range"
-    className="audio__progress--bar"
-    min="0"
-    max={duration || 0}
-    value={currentTime}
-    onChange={handleProgressChange}
-  />
+                <input
+                  type="range"
+                  className="audio__progress--bar"
+                  min="0"
+                  max={duration || 0}
+                  value={currentTime}
+                  onChange={handleProgressChange}
+                />
 
-  <div className="audio__time">{formatTime(duration)}</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-
-);
-
+                <div className="audio__time">{formatTime(duration)}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }

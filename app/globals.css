@@ -1581,24 +1581,30 @@ a {
   font-size: 14px;
 }
 
-
-
-
-
-
-.sidebar__link--wrapper:last-child {
-    margin-bottom: 0;
+.sidebar__font--size-icon-medium {
+  width: 22px;
+  height: 22px;
 }
-.sidebar__font--size-wrapper {
-    display: flex;
-    margin-left: 24px;
-    gap: 8px;
+
+.sidebar__font--size-icon-large {
+  width: 28px;
+  height: 28px;
 }
-.sidebar__link--wrapper {
-    display: flex;
-    align-items: center;
-    height: 56px;
-    color: #032b41;
-    margin-bottom: 8px;
-    cursor: pointer;
+
+.sidebar__font--size-icon-xlarge {
+  width: 32px;
+  height: 32px;
+}
+.sidebar__font--size-icon--active {
+  position: relative;
+}
+.sidebar__font--size-icon--active::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  display: block;
+  background: #2bd97c;
 }
