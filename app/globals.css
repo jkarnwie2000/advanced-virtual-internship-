@@ -1499,6 +1499,10 @@ a {
   line-height: 1.6;
 }
 
+.audio__book--summary-paragraph {
+  margin-bottom: 24px;
+}
+
 .audio__wrapper {
   position: fixed;
   bottom: 0;
@@ -1568,6 +1572,8 @@ a {
 
 .audio__progress--bar {
   width: 100%;
+  accent-color: #2bd97c;
+  cursor: pointer;
 }
 
 .audio__time {

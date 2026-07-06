@@ -46,7 +46,10 @@ export default function LoginForm({ redirectTo = "/foryou" }) {
         <button
           type="button"
           className="btn-login login-guest"
-          onClick={() => router.push(redirectTo)}
+          onClick={() => {
+            localStorage.setItem("summaristGuest", "true");
+            router.push(redirectTo);
+          }}
         >
           <span className="guest-icon">
             <LoginIcon />

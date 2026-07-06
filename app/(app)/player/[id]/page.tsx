@@ -63,25 +63,39 @@ const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
   const [book, setBook] = useState<any>(null);
 
   useEffect(() => {
-    async function fetchBook() {
-      const res = await fetch(
-        `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
-      );
+  async function fetchBook() {
+    setBook(null);
+    setCurrentTime(0);
+    setDuration(0);
+    setIsPlaying(false);
 
-      const data = await res.json();
-      setBook(data);
+    if (audioRef.current) {
+      audioRef.current.pause();
+      audioRef.current.currentTime = 0;
     }
 
-    if (bookId) {
-      fetchBook();
-    }
-  }, [bookId]);
+    const res = await fetch(
+      `https://us-central1-summaristt.cloudfunctions.net/getBook?id=${bookId}`
+    );
 
-  if (!book) {
-    return <div>Loading...</div>;
+    const data = await res.json();
+    setBook(data);
   }
 
- return (
+  if (bookId) {
+    fetchBook();
+  }
+}, [bookId]);
+
+if (!book) {
+  return <div>Loading...</div>;
+}
+
+const summaryParagraphs = (book.summary || "")
+  .split(/\n+/)
+  .filter((paragraph: string) => paragraph.trim() !== "");
+
+return (
 <div id="__next">
 <div className="wrapper">
 <div className="search__background">
@@ -296,11 +310,18 @@ const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
 <div className="summary">
 <div className="audio__book--summary" style={{ fontSize: "16px" }}>
 <div className="audio__book--summary-title">
-    <b>The 5 Second Rule</b>
+  <b>{book.title}</b>
 </div>
-<div className="audio__book--summary-text">{book.summary}</div>
+<div className="audio__book--summary-text">
+  {summaryParagraphs.map((paragraph: string, index: number) => (
+    <p key={index} className="audio__book--summary-paragraph">
+      {paragraph.trim()}
+    </p>
+  ))}
+</div>
  <div className="audio__wrapper">
 <audio
+  key={String(bookId)}
   ref={audioRef}
   src={book.audioLink}
   onLoadedMetadata={() => {
@@ -358,7 +379,7 @@ const handleProgressChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     value={currentTime}
     onChange={handleProgressChange}
   />
-  
+
   <div className="audio__time">{formatTime(duration)}</div>
 </div>
 </div>

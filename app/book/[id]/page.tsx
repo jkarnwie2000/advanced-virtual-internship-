@@ -33,17 +33,18 @@ export default function BookPage() {
   }, [bookId]);
 
   if (loading) {
-    return <div>Loading...</div>;
-  }
+  return <div>Loading...</div>;
+}
 
-  if (!book) {
-    return <div>Book not found</div>;
-  }
+if (!book) {
+  return <div>Book not found</div>;
+}
 
 const handleReadListen = () => {
   const user = auth.currentUser;
+  const isGuest = localStorage.getItem("summaristGuest") === "true";
 
-  if (!user) {
+  if (!user && !isGuest) {
     setIsAuthModalOpen(true);
     return;
   }
