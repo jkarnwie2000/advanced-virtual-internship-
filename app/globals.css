@@ -1550,10 +1550,20 @@ a {
 
 .audio__controls--btn {
   color: white;
-  font-size: 24px;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.audio__controls--btn svg {
+    width: 28px;
+    height: 28px;
+    stroke: #fff;
+    stroke-width: 6;
+    transition: all .2s;
 }
 
 .audio__controls--btn-play {
@@ -1607,4 +1617,120 @@ a {
   height: 3px;
   display: block;
   background: #2bd97c;
+}
+
+/* SKELETON LOADING STATE CODES */  
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  background: #e5e7eb;
+  border-radius: 6px;
+}
+
+.skeleton::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.55),
+    transparent
+  );
+  animation: skeleton-loading 1.2s infinite;
+}
+
+@keyframes skeleton-loading {
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.skeleton-title {
+  width: 45%;
+  height: 34px;
+  margin-bottom: 28px;
+}
+
+.skeleton-line {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 14px;
+}
+
+.skeleton-line.short {
+  width: 60%;
+}
+
+.skeleton-line.medium {
+  width: 80%;
+}
+
+.skeleton-image {
+  width: 48px;
+  height: 48px;
+  border-radius: 8px;
+}
+
+.skeleton-track-title {
+  width: 180px;
+  height: 18px;
+  margin-bottom: 8px;
+}
+
+.skeleton-track-author {
+  width: 120px;
+  height: 14px;
+}
+
+.skeleton-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+}
+
+.skeleton-play-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+}
+
+.skeleton-progress {
+  flex: 1;
+  height: 6px;
+  border-radius: 999px;
+  margin: 0 12px;
+}
+
+.skeleton-time {
+  width: 42px;
+  height: 14px;
+}
+
+/* SKELETON BOOK PAGE CODES */
+
+.skeleton-book-title {
+  width: 200px;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+.skeleton-book-author {
+  width: 150px;
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-book-subtitle {
+  width: 250px;
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-book-image {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 8px;
 }

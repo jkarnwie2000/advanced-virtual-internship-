@@ -61,10 +61,13 @@ export default function PlayerPage() {
   const bookId = params.id;
 
   const [book, setBook] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     async function fetchBook() {
+      setLoading(true);
       setBook(null);
+
       setCurrentTime(0);
       setDuration(0);
       setIsPlaying(false);
@@ -79,7 +82,9 @@ export default function PlayerPage() {
       );
 
       const data = await res.json();
+
       setBook(data);
+      setLoading(false);
     }
 
     if (bookId) {
@@ -87,8 +92,8 @@ export default function PlayerPage() {
     }
   }, [bookId]);
 
-  if (!book) {
-    return <div>Loading...</div>;
+  if (loading) {
+    return <PlayerSkeleton />;
   }
 
   const summaryParagraphs = (book.summary || "")
@@ -236,7 +241,10 @@ export default function PlayerPage() {
                 <div className="sidebar__link--text">Search</div>
               </div>
               <div className="sidebar__link--wrapper sidebar__font--size-wrapper">
-                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 16 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(16)}>
+                <div
+                  className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 16 ? "sidebar__font--size-icon--active" : ""} `}
+                  onClick={() => setFontSize(16)}
+                >
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
@@ -253,11 +261,14 @@ export default function PlayerPage() {
                     </g>
                   </svg>
                 </div>
-                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 22 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(22)}>
+                <div
+                  className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 22 ? "sidebar__font--size-icon--active" : ""} `}
+                  onClick={() => setFontSize(22)}
+                >
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 24 24"
                     className={`sidebar__font--size-icon-medium`}
                     height="1em"
@@ -270,11 +281,14 @@ export default function PlayerPage() {
                     </g>
                   </svg>
                 </div>
-                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 28 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(28)}>
+                <div
+                  className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 28 ? "sidebar__font--size-icon--active" : ""} `}
+                  onClick={() => setFontSize(28)}
+                >
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 24 24"
                     className={`sidebar__font--size-icon-large ${fontSize === 28 ? "sidebar__font--size-icon--active" : ""} `}
                     height="1em"
@@ -287,11 +301,14 @@ export default function PlayerPage() {
                     </g>
                   </svg>
                 </div>
-                <div className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 32 ? "sidebar__font--size-icon--active" : ""} `} onClick={() => setFontSize(32)}>
+                <div
+                  className={`sidebar__link--text sidebar__font--size-icon ${fontSize === 32 ? "sidebar__font--size-icon--active" : ""} `}
+                  onClick={() => setFontSize(32)}
+                >
                   <svg
                     stroke="currentColor"
                     fill="currentColor"
-                    stroke-width="0"
+                    strokeWidth="0"
                     viewBox="0 0 24 24"
                     className={`sidebar__font--size-icon-xlarge`}
                     height="1em"
@@ -382,7 +399,10 @@ export default function PlayerPage() {
             <div className="audio__book--summary-title">
               <b>{book.title}</b>
             </div>
-            <div className="audio__book--summary-text">
+            <div
+              className="audio__book--summary-text"
+              style={{ fontSize: `${fontSize}px` }}
+            >
               {summaryParagraphs.map((paragraph: string, index: number) => (
                 <p key={index} className="audio__book--summary-paragraph">
                   {paragraph.trim()}
@@ -460,6 +480,53 @@ export default function PlayerPage() {
                 <div className="audio__time">{formatTime(duration)}</div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+export function PlayerSkeleton() {
+  return (
+    <div className="summary">
+      <div className="audio__book--summary">
+        <div className="skeleton skeleton-title"></div>
+
+        <div className="audio__book--summary-text">
+          <div className="skeleton skeleton-line"></div>
+          <div className="skeleton skeleton-line"></div>
+          <div className="skeleton skeleton-line"></div>
+          <div className="skeleton skeleton-line short"></div>
+
+          <div className="skeleton skeleton-line"></div>
+          <div className="skeleton skeleton-line"></div>
+          <div className="skeleton skeleton-line"></div>
+          <div className="skeleton skeleton-line medium"></div>
+        </div>
+
+        <div className="audio__wrapper">
+          <div className="audio__track--wrapper">
+            <div className="skeleton skeleton-image"></div>
+
+            <div className="audio__track--details-wrapper">
+              <div className="skeleton skeleton-track-title"></div>
+              <div className="skeleton skeleton-track-author"></div>
+            </div>
+          </div>
+
+          <div className="audio__controls--wrapper">
+            <div className="audio__controls">
+              <div className="skeleton skeleton-btn"></div>
+              <div className="skeleton skeleton-play-btn"></div>
+              <div className="skeleton skeleton-btn"></div>
+            </div>
+          </div>
+
+          <div className="audio__progress--wrapper">
+            <div className="skeleton skeleton-time"></div>
+            <div className="skeleton skeleton-progress"></div>
+            <div className="skeleton skeleton-time"></div>
           </div>
         </div>
       </div>

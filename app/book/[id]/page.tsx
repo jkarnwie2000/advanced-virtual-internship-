@@ -36,6 +36,10 @@ export default function BookPage() {
   return <div>Loading...</div>;
 }
 
+if (loading) {
+    return <BookSkeleton />;
+}
+
 if (!book) {
   return <div>Book not found</div>;
 }
@@ -254,3 +258,15 @@ return (
 );
 
 };
+
+export function BookSkeleton() {
+  return (
+    <div className="book-page__container">
+      <div className="skeleton skeleton-book-title"></div>
+      <div className="skeleton skeleton-book-author"></div>
+      <div className="skeleton skeleton-book-subtitle"></div>
+      <div className="skeleton skeleton-book-image"></div>
+    </div>
+      
+  );
+}
