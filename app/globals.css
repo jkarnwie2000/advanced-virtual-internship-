@@ -1705,46 +1705,28 @@ a {
 
 /* BOOK SKELETON PAGE CODES */
 
-.skeleton-book-title {
-  width: 80%;
-  height: 50px;
+.skeleton-version {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.skeleton-text-container {
+  width: 50%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.skeleton-text-1 {
+  width: 100%;
+  height: 16px;
   margin-bottom: 8px;
 }
-
-.skeleton-book-author {
-  width: 40%;
-  height: 20px;
+.skeleton-text-2 {
+  width: 100%;
+  height: 16px;
   margin-bottom: 8px;
 }
-
-.skeleton-book-subtitle {
-  width: 30%;
-  height: 30px;
-  margin-bottom: 8px;
-}
-
-.skeleton-image1 {
-  width: 200px;
-  height: 300px;
-  text-align: center;
-  margin-bottom: 16px;
-}
-
-.skeleton-btn1 {
-  width: 100px;
-  height: 40px;
-  border-radius: 4px;
-  margin-bottom: 8px;
-}
-
-.skeleton-line1 {
-  width: 80%;
-  height: 200px;
-  margin-bottom: 14px;
-}
-
-.skeleton-linea.short {
-  width: 20%;
-  height: 20px;
-  margin-bottom: 14px;
-} 
