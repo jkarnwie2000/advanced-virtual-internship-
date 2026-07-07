@@ -250,7 +250,13 @@ export default function BookPage() {
           </div>
         </div>
         {loading ? (
-          <BookSkeleton />
+          <div className="row book-page__row">
+            <div className="container book-page__container">
+              <div className="inner__wrapper">
+                <BookSkeleton />
+              </div>
+            </div>
+          </div>
         ) : (
           <div className="row book-page__row">
             <audio src="https://firebasestorage.googleapis.com/v0/b/summaristt.appspot.com/o/books%2Faudios%2Fhow-to-win-friends-and-influence-people.mp3?alt=media&amp;token=60872755-13fc-43f4-8b75-bae3fcd73991"></audio>
@@ -446,7 +452,11 @@ export default function BookPage() {
 export function BookSkeleton() {
   return (
     <div className="book-page__container">
-      <div className="inner-book--img-wrapper">
+      <div className="inner-book--img-wrapper skeleton-version">
+        <div className="skeleton-text-container">
+          <p className="skeleton skeleton-text-1"></p>
+          <p className="skeleton skeleton-text-2"></p>
+        </div>
         <div className="skeleton skeleton-image1"></div>
       </div>
       <div className="inner-book__read--btn-wrapper">
@@ -458,8 +468,8 @@ export function BookSkeleton() {
         <div className="skeleton skeleton-linea short"></div>
         <div className="skeleton skeleton-line1"></div>
         <div className="skeleton skeleton-linea short"></div>
-        <div className="skeleton skeleton-line1"></div>       
-      </div>   
+        <div className="skeleton skeleton-line1"></div>
+      </div>
     </div>
   );
 }
