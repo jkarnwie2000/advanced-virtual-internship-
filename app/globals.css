@@ -1385,12 +1385,6 @@ a {
   object-fit: cover;
 }
 
-
-
-
-
-
-
 .inner-book__read--btn-wrapper {
   display: flex;
   gap: 16px;
@@ -1619,7 +1613,7 @@ a {
   background: #2bd97c;
 }
 
-/* SKELETON LOADING STATE CODES */  
+/* AUDIO PAGE SKELETON CODES */  
 
 .skeleton {
   position: relative;
@@ -1709,28 +1703,51 @@ a {
   height: 14px;
 }
 
-/* SKELETON BOOK PAGE CODES */
+/* BOOK SKELETON PAGE CODES */
 
 .skeleton-book-title {
-  width: 200px;
-  height: 20px;
+  width: 80%;
+  height: 50px;
   margin-bottom: 8px;
 }
 
 .skeleton-book-author {
-  width: 150px;
-  height: 16px;
+  width: 40%;
+  height: 20px;
   margin-bottom: 8px;
 }
 
 .skeleton-book-subtitle {
-  width: 250px;
-  height: 16px;
+  width: 30%;
+  height: 30px;
   margin-bottom: 8px;
 }
 
-.skeleton-book-image {
-  width: 100%;
-  height: 16px;
+.skeleton-image1 {
+  width: 200px;
+  height: 300px;
   margin-bottom: 8px;
+}
+
+.skeleton-btn1 {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-line1 {
+  width: 50%;
+  height: 150px;
+  margin-bottom: 14px;
+}
+
+.skeleton-line1.short {
+  width: 30%;
+  height: 20px;
+}
+
+.skeleton-line.medium1 {
+  width: 80%;
+  height: 300px;
 }

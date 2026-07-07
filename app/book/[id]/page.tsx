@@ -32,10 +32,6 @@ export default function BookPage() {
     }
   }, [bookId]);
 
-  if (loading) {
-  return <div>Loading...</div>;
-}
-
 if (loading) {
     return <BookSkeleton />;
 }
@@ -262,10 +258,30 @@ return (
 export function BookSkeleton() {
   return (
     <div className="book-page__container">
+      <div className="inner-book--img-wrapper">
+      <div className="skeleton skeleton-image1"></div>
+      </div>
+      <div className="inner-book__read--btn-wrapper">
+        <div className="skeleton skeleton-btn1"></div>
+        <div className="skeleton skeleton-btn1"></div>
+      </div>        
+
+      <div className="inner-book__book--description">
+        <div className="skeleton skeleton-line1"></div>
+        <div className="skeleton skeleton-line1"></div>        
+        <div className="skeleton skeleton-line short1"></div> 
+      </div>
+
+      <div className="inner-book__book--description">
+        <div className="skeleton skeleton-line1"></div>
+        <div className="skeleton skeleton-line1"></div>        
+        <div className="skeleton skeleton-line medium1"></div>
+      </div>
+
+
       <div className="skeleton skeleton-book-title"></div>
       <div className="skeleton skeleton-book-author"></div>
-      <div className="skeleton skeleton-book-subtitle"></div>
-      <div className="skeleton skeleton-book-image"></div>
+      <div className="skeleton skeleton-book-subtitle"></div>      
     </div>
       
   );
