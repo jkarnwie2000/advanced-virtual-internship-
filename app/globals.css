@@ -1726,7 +1726,8 @@ a {
 .skeleton-image1 {
   width: 200px;
   height: 300px;
-  margin-bottom: 8px;
+  text-align: center;
+  margin-bottom: 16px;
 }
 
 .skeleton-btn1 {
@@ -1737,17 +1738,13 @@ a {
 }
 
 .skeleton-line1 {
-  width: 50%;
-  height: 150px;
+  width: 80%;
+  height: 200px;
   margin-bottom: 14px;
 }
 
-.skeleton-line1.short {
-  width: 30%;
+.skeleton-linea.short {
+  width: 20%;
   height: 20px;
-}
-
-.skeleton-line.medium1 {
-  width: 80%;
-  height: 300px;
-}
+  margin-bottom: 14px;
+} 
