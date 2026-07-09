@@ -1705,6 +1705,50 @@ a {
 
 /* BOOK SKELETON PAGE CODES */
 
+.skeleton-book-title {
+  width: 80%;
+  height: 50px;
+  margin-bottom: 8px;
+}
+
+.skeleton-book-author {
+  width: 40%;
+  height: 20px;
+  margin-bottom: 8px;
+}
+
+.skeleton-book-subtitle {
+  width: 30%;
+  height: 30px;
+  margin-bottom: 8px;
+}
+
+.skeleton-image1 {
+  width: 200px;
+  height: 300px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.skeleton-btn1 {
+  width: 100px;
+  height: 40px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+}
+
+.skeleton-line1 {
+  width: 80%;
+  height: 200px;
+  margin-bottom: 14px;
+}
+
+.skeleton-linea.short {
+  width: 20%;
+  height: 20px;
+  margin-bottom: 14px;
+} 
+
 .skeleton-version {
   display: flex;
   align-items: center;
@@ -1729,4 +1773,171 @@ a {
   width: 100%;
   height: 16px;
   margin-bottom: 8px;
+}
+
+/* LIBRARY PAGE SKELETON CODES */
+
+/* --- Search bar skeleton --- */
+.skeleton-library-search {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* --- Sidebar skeleton --- */
+.skeleton-library-logo {
+  width: 120px;
+  height: 28px;
+  margin: 0 auto;
+}
+
+.skeleton-library-sidebar-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.skeleton-library-sidebar-text {
+  width: 100px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+/* --- Section headers --- */
+.skeleton-library-section-title {
+  width: 160px;
+  height: 22px;
+  margin-bottom: 16px;
+}
+
+.skeleton-library-section-subtitle {
+  width: 80px;
+  height: 16px;
+  margin-bottom: 16px;
+}
+
+/* --- Book card skeleton (mirrors .for-you__recommended--books-link) --- */
+.skeleton-library-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+}
+
+.skeleton-library-title {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-library-author {
+  width: 60%;
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-library-subtitle {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-library-subtitle.short {
+  width: 70%;
+}
+
+.skeleton-library-detail {
+  width: 50px;
+  height: 14px;
+}
+
+/* --- Responsive tweaks to match your existing mobile breakpoint --- */
+@media (max-width: 768px) {
+  .skeleton-library-sidebar-text {
+    width: 80px;
+  }
+}
+
+
+/* FOR YOU PAGE SKELETON CODES */
+
+/* --- Search bar skeleton --- */
+.skeleton-for-you-search {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+}
+
+/* --- Sidebar skeleton --- */
+.skeleton-for-you-logo {
+  width: 120px;
+  height: 28px;
+  margin: 0 auto;
+}
+
+.skeleton-for-you-sidebar-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.skeleton-for-you-sidebar-text {
+  width: 100px;
+  height: 16px;
+  margin-left: 8px;
+}
+
+/* --- Section headers --- */
+.skeleton-for-you-section-title {
+  width: 160px;
+  height: 22px;
+  margin-bottom: 16px;
+}
+
+.skeleton-for-you-section-subtitle {
+  width: 80px;
+  height: 16px;
+  margin-bottom: 16px;
+}
+
+/* --- Book card skeleton (mirrors .for-you__recommended--books-link) --- */
+.skeleton-for-you-image {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 4px;
+}
+
+.skeleton-for-you-title {
+  width: 100%;
+  height: 16px;
+  margin-bottom: 8px;
+}
+
+.skeleton-for-you-author {
+  width: 60%;
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-for-you-subtitle {
+  width: 100%;
+  height: 14px;
+  margin-bottom: 8px;
+}
+
+.skeleton-for-you-subtitle.short {
+  width: 70%;
+}
+
+.skeleton-for-you-detail {
+  width: 50px;
+  height: 14px;
+}
+
+/* --- Responsive tweaks to match your existing mobile breakpoint --- */
+@media (max-width: 768px) {
+  .skeleton-for-you-sidebar-text {
+    width: 80px;
+  }
 }

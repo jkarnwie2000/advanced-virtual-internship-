@@ -2,15 +2,129 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function ForYouPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-
+  const [isLoading, setIsLoading] = useState(true);
   const pathname = usePathname();
 
   // Helper function to check if the route is active
   const isActive = (path: string) => pathname === path;
+
+  useEffect(() => {
+      // Replace this with your real data-fetch completion instead of a timer
+      const timer = setTimeout(() => setIsLoading(false), 1500);
+      return () => clearTimeout(timer);
+    }, []);
+  
+    if (isLoading) {
+      return <ForYouSkeleton/>;
+    }
+
+
+  function BookCardSkeleton() {
+  return (
+    <div className="for-you__recommended--books-link">
+      <div className="book__image--wrapper" style={{ marginBottom: "8px" }}>
+        <div className="skeleton skeleton-for-you-image"></div>
+      </div>
+      <div className="skeleton skeleton-for-you-title"></div>
+      <div className="skeleton skeleton-for-you-author"></div>
+      <div className="skeleton skeleton-for-you-subtitle"></div>
+      <div className="skeleton skeleton-for-you-subtitle short"></div>
+      <div className="recommended__book--details-wrapper">
+        <div className="skeleton skeleton-for-you-detail"></div>
+        <div className="skeleton skeleton-for-you-detail"></div>
+      </div>
+    </div>
+  );
+}
+
+function ForYouSkeleton() {
+  return (
+    <div id="__next">
+      <div className="wrapper">
+        <div className="search__background">
+          <div className="search__wrapper">
+            <div className="search__content">
+              <div className="skeleton skeleton-for-you-search"></div>
+            </div>
+          </div>
+        </div>
+
+        <div className="sidebar sidebar--closed">
+          <div className="sidebar__logo">
+            <div className="skeleton skeleton-for-you-logo"></div>
+          </div>
+          <div className="sidebar__wrapper">
+            <div className="sidebar__top">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div className="sidebar__link--wrapper" key={`top-${i}`}>
+                  <div className="sidebar__link--line"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-icon"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-text"></div>
+                </div>
+              ))}
+            </div>
+            <div className="sidebar__bottom">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div className="sidebar__link--wrapper" key={`bottom-${i}`}>
+                  <div className="sidebar__link--line"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-icon"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-text"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="container">
+            <div className="skeleton skeleton-for-you-section-title"></div>
+            <div className="skeleton skeleton-for-you-section-subtitle"></div>
+            <div className="for-you__recommended--books">
+              {Array.from({ length: 1 }).map((_, i) => (
+                <BookCardSkeleton key={`saved-${i}`} />
+              ))}
+            </div>
+
+            <div className="skeleton skeleton-for-you-section-title"></div>
+            <div className="skeleton skeleton-for-you-section-subtitle"></div>
+            <div className="for-you__recommended--books">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <BookCardSkeleton key={`finished-${i}`} />
+              ))}              
+            </div>
+          </div>
+        </div>
+
+        <div className="row">
+          <div className="container">
+            <div className="skeleton skeleton-for-you-section-title"></div>
+            <div className="skeleton skeleton-for-you-section-subtitle"></div>
+            <div className="skeleton skeleton-for-you__selected--book">
+              {Array.from({ length: 1 }).map((_, i) => (
+                <BookCardSkeleton key={`saved-${i}`} />
+              ))}
+            </div>
+
+            <div className="skeleton skeleton-for-you-section-title"></div>
+            <div className="skeleton skeleton-for-you-section-subtitle"></div>
+            <div className="skeleton skeleton-for-you__recommended--books">
+              {Array.from({ length: 8 }).map((_, i) => (
+                <BookCardSkeleton key={`finished-${i}`} />
+              ))}              
+            </div>
+          </div>
+        </div>      
+      
+      </div>
+    </div>
+  );
+}
+
+
 
   return (
     <div id="__next">
@@ -224,6 +338,7 @@ export default function ForYouPage() {
             </div>
           </div>
         </div>
+        
         <div className="row">
           <div className="container">
             <div className="for-you__wrapper">
