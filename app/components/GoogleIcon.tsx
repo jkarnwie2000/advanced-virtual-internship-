@@ -1,34 +1,5 @@
-import React from "react";
+import type { SVGProps } from "react";
 
-const GoogleIcon = () => {
-  return (
-        <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 48 48"
-      width="200"
-      height="200"
-    >
-      <path
-        fill="#EA4335"
-        d="M24 9.5c3.54 0 6.74 1.22 9.26 3.6l6.9-6.9C35.98 2.38 30.37 0 24 0 14.64 0 6.56 5.38 2.6 13.22l8.04 6.24C12.6 13.58 17.82 9.5 24 9.5z"
-      />
-
-      <path
-        fill="#FBBC05"
-        d="M10.64 19.46 2.6 13.22A23.94 23.94 0 0 0 0 24c0 3.82.92 7.42 2.6 10.78l8.04-6.24A14.4 14.4 0 0 1 9.5 24c0-1.58.4-3.1 1.14-4.54z"
-      />
-
-      <path
-        fill="#34A853"
-        d="M24 48c6.48 0 11.92-2.14 15.9-5.82l-7.36-5.7c-2.08 1.4-4.74 2.22-8.54 2.22-6.18 0-11.4-4.08-13.36-9.96L2.6 34.78C6.56 42.62 14.64 48 24 48z"
-      />
-
-      <path
-        fill="#4285F4"
-        d="M46.5 24c0-1.4-.12-2.74-.34-4H24v8h12.7c-.54 2.92-2.2 5.4-4.8 7.08l7.36 5.7C43.9 36.54 46.5 30.84 46.5 24z"
-      />
-    </svg>
-  );
-};
-
-export default GoogleIcon;
+export default function GoogleIcon(_props: SVGProps<SVGSVGElement>) {
+  return null;
+}
