@@ -63,6 +63,10 @@ export default function BookPage() {
   return <div>Loading...</div>;
 }
 
+if (!book) {
+  return <BookSkeleton />;
+}
+
 return (
     <div id="__next">
       {isAuthModalOpen && (
