@@ -1,5 +1,6 @@
 "use client";
 
+import type { FormEvent } from "react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { auth } from "../firebaseConfig";
@@ -12,8 +13,9 @@ export default function LoginForm({ redirectTo = "/foryou" }) {
   const [password, setPassword] = useState("");    
   const router = useRouter();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
   e.preventDefault();
+
 
   try {    
     

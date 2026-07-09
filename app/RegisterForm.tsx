@@ -2,6 +2,7 @@
 
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import type { FormEvent } from "react";
 import { auth } from "../firebaseConfig";
 
 export default function SignUpForm() {
@@ -11,7 +12,7 @@ export default function SignUpForm() {
     confirmPassword: "",
   });
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       const result = await createUserWithEmailAndPassword(
@@ -20,9 +21,18 @@ export default function SignUpForm() {
         formData.password,
       );
       console.log("New user:", result.user);
-    } catch (error) {
-      console.error("Sign up error:", error.message);
-    }
+    } 
+    
+    catch (error) {
+    if (error instanceof Error) {
+    console.error("Sign up error:", error.message);
+  }
+   
+  
+  else {
+    console.error("Sign up error:", error);
+  }
+}
   };
 
   return (
@@ -72,3 +82,4 @@ export default function SignUpForm() {
     </div>
   );
 }
+

@@ -6,6 +6,21 @@ import { useState, useEffect } from "react";
 import { useParams } from "next/navigation";
 import AuthModal from "../../AuthModal";
 
+type Book = {
+  id: string;
+  title: string;
+  author: string;
+  subTitle: string;
+  bookDescription?: string;
+  authorDescription?: string;
+  imageLink?: string;
+  audioLink?: string;
+  totalRating?: number;
+  averageRating?: number;
+  subscriptionRequired?: boolean;
+};
+
+
 export default function BookPage() {
   const params = useParams();
   const bookId = params.id;
@@ -13,7 +28,7 @@ export default function BookPage() {
   const router = useRouter();
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
 
-  const [book, setBook] = useState(null);
+  const [book, setBook] = useState<Book | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -44,7 +59,11 @@ export default function BookPage() {
     router.push(`/player/${bookId}`);
   };
 
-  return (
+  if (!book) {
+  return <div>Loading...</div>;
+}
+
+return (
     <div id="__next">
       {isAuthModalOpen && (
         <AuthModal
