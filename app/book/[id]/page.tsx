@@ -58,15 +58,7 @@ export default function BookPage() {
 
     router.push(`/player/${bookId}`);
   };
-
-  if (!book) {
-  return <div>Loading...</div>;
-}
-
-if (!book) {
-  return <BookSkeleton />;
-}
-
+ 
 return (
     <div id="__next">
       {isAuthModalOpen && (
@@ -480,6 +472,33 @@ export function BookSkeleton() {
           <p className="skeleton skeleton-text-1"></p>
           <p className="skeleton skeleton-text-2"></p>
         </div>
+
+          <div className="sidebar sidebar--closed">
+          <div className="sidebar__logo">
+            <div className="skeleton skeleton-for-you-logo"></div>
+          </div>
+          <div className="sidebar__wrapper">
+            <div className="sidebar__top">
+              {Array.from({ length: 4 }).map((_, i) => (
+                <div className="sidebar__link--wrapper" key={`top-${i}`}>
+                  <div className="sidebar__link--line"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-icon"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-text"></div>
+                </div>
+              ))}
+            </div>
+            <div className="sidebar__bottom">
+              {Array.from({ length: 3 }).map((_, i) => (
+                <div className="sidebar__link--wrapper" key={`bottom-${i}`}>
+                  <div className="sidebar__link--line"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-icon"></div>
+                  <div className="skeleton skeleton-for-you-sidebar-text"></div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         <div className="skeleton skeleton-image1"></div>
       </div>
       <div className="inner-book__read--btn-wrapper">
