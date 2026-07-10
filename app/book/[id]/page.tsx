@@ -58,7 +58,11 @@ export default function BookPage() {
 
     router.push(`/player/${bookId}`);
   };
- 
+
+  if (!book) {
+  return <BookSkeleton />;
+}
+
 return (
     <div id="__next">
       {isAuthModalOpen && (
