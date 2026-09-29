@@ -1,7 +1,7 @@
 </> Markdown
 ## Book Summary Platform
 
-🔗 **Live Demo:** [View the live website] (https://advanced-virtual-internship-purpleg.vercel.app/foryou))
+🔗 **Live Demo:** [View the live website](https://advanced-virtual-internship-purpleg.vercel.app/foryou)
 
 A React platform that helps readers discover popular books
 
