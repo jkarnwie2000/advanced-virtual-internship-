@@ -1,3 +1,10 @@
+</> Markdown
+## Book Summary Platform
+
+🔗 **Live Demo:** [View the live website] (https://advanced-virtual-internship-purpleg.vercel.app/foryou))
+
+A React platform that helps readers discover popular books
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
